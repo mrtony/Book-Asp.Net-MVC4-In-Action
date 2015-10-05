@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@section head {
+    <script src="~/Scripts/AjaxDemo.js"></script>
+}
+
+@Html.ActionLink("Show the privacy policy", "PrivacyPolicy", null, new {id = "privacyLink"});
+
+<div id="privacy"></div>
