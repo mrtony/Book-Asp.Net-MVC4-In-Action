@@ -1,0 +1,26 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section head {
+    <script src="~/Scripts/AjaxDemo.js"></script>
+}
+
+<h2>留言</h2>
+
+@*產生留言清單*@
+<ul id="comments">
+    @foreach (var comment in Model)
+    {
+        <li>@comment</li>
+    }
+</ul>
+
+@using (Html.BeginForm("AddComment", "CustomAjaxControllerExample02", FormMethod.Post, new { id ="commentForm" }))
+{
+    @Html.TextArea("Comment", new {rows = 5, cols = 50, id = "inputComment" });
+
+    <button type="submit" class="btn btn-default">送出留言</button>
+}

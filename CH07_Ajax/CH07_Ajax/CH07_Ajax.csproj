@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomAjaxController.cs" />
+    <Compile Include="Controllers\CustomAjaxControllerExample02Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -238,6 +239,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\CustomAjax\Index.cshtml" />
     <Content Include="Views\CustomAjax\PrivacyPolicy.cshtml" />
+    <Content Include="Views\CustomAjaxControllerExample02\Index.cshtml" />
+    <Content Include="Views\CustomAjaxControllerExample02\AddComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
