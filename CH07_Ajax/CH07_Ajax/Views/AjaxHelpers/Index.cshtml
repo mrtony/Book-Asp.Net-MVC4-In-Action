@@ -1,0 +1,37 @@
+﻿@model System.Collections.Generic.IEnumerable<string>
+@{
+    ViewBag.Title = "MVC Ajax Helpers";
+}
+
+@section head {
+    <script type="text/javascript" src="@Url.Content("~/scripts/jquery.unobtrusive-ajax.js")"></script>
+}
+
+<h2>Using the ASP.NET MVC Ajax Helpers</h2>
+
+<div class="infoBox">
+    <p>This example shows how to use the ActionLink and BeginForm Ajax helpers to submit data via Ajax.</p>
+    <p>Unlike the jQuery sample, there is no need to write any custom client-side code.</p>
+</div>
+
+<h4>Comments</h4>
+
+<ul id="comments">
+    @foreach (var comment in Model)
+    {
+        <li>@comment</li>
+    }
+</ul>
+
+@using (Ajax.BeginForm("AddComment", new AjaxOptions { UpdateTargetId = "comments", InsertionMode = InsertionMode.InsertAfter }))
+{
+    @Html.TextArea("Comment", new { rows = 5, cols = 50 })
+    <br />
+    <input type="submit" value="Add Comment" />
+}
+
+<br />
+
+@Ajax.ActionLink("Show the Privacy Policy", "PrivacyPolicy", new AjaxOptions { UpdateTargetId = "privacy", InsertionMode = InsertionMode.Replace })
+
+<div id="privacy"></div>
